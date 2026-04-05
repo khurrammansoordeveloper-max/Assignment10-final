@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> POP </title>
+</head>
+<body>
+    <h1> POP </h1>
+    <p> In JavaScript, the pop() method is used to remove the last element from an array and return that element.
+It modifies the original array by reducing its length by one.
+Syntax</p>
+
+Javascriptarray.pop();
+
+
+Returns: The removed element.
+If the array is empty: Returns undefined.
+
+
+Example
+Javascript// Example array
+let fruits = ["Apple", "Banana", "Cherry"];
+
+// Remove last element
+let lastFruit = fruits.pop();
+
+console.log(lastFruit); // Output: Cherry
+console.log(fruits);    // Output: ["Apple", "Banana"]
+
+
+Edge Case: Empty Array
+Javascriptlet emptyArr = [];
+let removed = emptyArr.pop();
+
+console.log(removed); // Output: undefined
+console.log(emptyArr); // Output: []
+
+
+
+
+</body>
+</html>
