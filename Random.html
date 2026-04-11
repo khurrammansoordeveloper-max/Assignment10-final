@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> AAA-Random-Team-Generator </title>
+</head>
+<body>
+    <h1> AAA-Random-Team-Generator </h1>
+
+
+
+    <script>
+const students = ["Ali", "Sara", "Hamza", "Ayesha", "John", "Rida"];
+
+function generateTeams(namesArray) {
+    // 1. Make a copy to keep the original array safe
+    let pool = [...namesArray];
+    let allTeams = [];
+
+    // 2. Loop while there are at least 2 people left
+    while (pool.length >= 2) {
+        let team = [];
+
+        // Pick first student
+        let index1 = Math.floor(Math.random() * pool.length);
+        team.push(pool.splice(index1, 1)[0]);
+
+        // Pick second student
+        let index2 = Math.floor(Math.random() * pool.length);
+        team.push(pool.splice(index2, 1)[0]);
+
+        // Add the pair to our master list
+        allTeams.push(team);
+    }
+
+    // Optional: Handle "odd man out"
+    if (pool.length > 0) {
+        console.log(`Note: ${pool[0]} is left without a team.`);
+    }
+
+    return allTeams;
+}
+
+// 3. Run the function
+const finalTeams = generateTeams(students);
+
+// 4. Display in console
+finalTeams.forEach((team, index) => {
+    console.log(`Team ${index + 1}: ${team[0]} & ${team[1]}`);
+});
+
+    </script>
+</body>
+</html>
